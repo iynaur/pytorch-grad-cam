@@ -63,6 +63,8 @@ class BaseCAM:
 
         if target_category is None:
             target_category = np.argmax(output.cpu().data.numpy(), axis=-1)
+            print(output.cpu().data.numpy())
+            print('class id: ', target_category)
         else:
             assert(len(target_category) == input_tensor.size(0))
 
